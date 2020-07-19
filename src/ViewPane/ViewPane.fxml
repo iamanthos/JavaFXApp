@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="786.0" prefWidth="1166.0" style="-fx-background-color: #798799;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewPane.ViewPaneController">
+    <stylesheets>
+        <URL value="@viewpane.css" />
+    </stylesheets>
+   <children>
+      <TreeView fx:id="treeview1" prefHeight="606.0" prefWidth="200.0" />
+      <AnchorPane fx:id="formAnchor" layoutY="606.0" prefHeight="107.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <TextField fx:id="txtbox1" layoutX="213.0" layoutY="18.0" visible="false" />
+            <TextField fx:id="txtbox2" layoutX="390.0" layoutY="17.0" visible="false" />
+            <TextField fx:id="txtbox3" layoutX="560.0" layoutY="17.0" visible="false" />
+            <TextField fx:id="txtbox4" layoutX="744.0" layoutY="18.0" visible="false" />
+            <ComboBox fx:id="txtbox5" layoutX="912.0" layoutY="18.0" prefWidth="150.0" promptText="Select Status" visible="false" />
+            <TextField fx:id="txtbox6" layoutX="1085.0" layoutY="18.0" visible="false" />
+            <TextField fx:id="txtbox7" layoutX="213.0" layoutY="54.0" visible="false" />
+            <ComboBox fx:id="txtbox8" layoutX="390.0" layoutY="54.0" prefWidth="150.0" promptText="Select Status" visible="false" />
+            <Button fx:id="btnSave" layoutX="30.0" layoutY="18.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #328708;" text="Save" textFill="WHITE" />
+            <Label fx:id="lblError" layoutX="57.0" layoutY="71.0" text="Changes Saved!" textFill="#a40101" visible="false" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutX="200.0" layoutY="70.0" onSort="#MouseClick" prefHeight="536.0" prefWidth="1166.0">
+        <columns>
+          <TableColumn fx:id="c1" prefWidth="106.0" text="C1" />
+          <TableColumn fx:id="c2" prefWidth="124.0" text="C2" />
+          <TableColumn fx:id="c3" prefWidth="117.0" text="C3" />
+          <TableColumn fx:id="c4" prefWidth="117.0" text="C4" />
+          <TableColumn fx:id="c5" prefWidth="117.0" text="C5" />
+          <TableColumn fx:id="c6" prefWidth="117.0" text="C6" />
+          <TableColumn fx:id="c7" prefWidth="117.0" text="C7" />
+          <TableColumn fx:id="c8" prefWidth="117.0" text="C8" />
+            <TableColumn fx:id="c9" prefWidth="117.0" text="C9" />
+            <TableColumn fx:id="c10" prefWidth="117.0" text="C10" />
+        </columns>
+      </TableView>
+      <AnchorPane fx:id="lblNew" layoutX="200.0" layoutY="-1.0" prefHeight="30.0" prefWidth="1166.0" style="-fx-background-color: #5d4eb5;">
+         <children>
+            <Label fx:id="lblWelcome" layoutX="255.0" layoutY="4.0" prefHeight="20.0" prefWidth="109.0" text="" textFill="#f8f5f5" AnchorPane.leftAnchor="550.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnDashboard" layoutY="2.0" mnemonicParsing="false" onAction="#goToDashboard" style="-fx-background-color: #328708;" text="Dashboard" textFill="#f5f5f5" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblFilter" layoutX="217.0" layoutY="41.0" text="Filter" />
+      <TextField fx:id="txtFilter" layoutX="265.0" layoutY="37.0" promptText="Id" />
+      <Button layoutX="432.0" layoutY="37.0" mnemonicParsing="false" onAction="#filter" style="-fx-background-color: #328708;" text="Search" textFill="#fffefe" />
+      <Button fx:id="btnEntryDel" layoutX="1243.0" layoutY="37.0" mnemonicParsing="false" onAction="#Delete" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #eb0527;" text="Delete Entry" textFill="#eeebeb" />
+      <Button fx:id="btnEntryAdd" layoutX="1119.0" layoutY="37.0" mnemonicParsing="false" onAction="#ShowForm" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #13a19c;" text="Add Entry" textFill="#eeebeb" />
+      <Button fx:id="btnImport" layoutX="992.0" layoutY="37.0" mnemonicParsing="false" onAction="#Import" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #db8848;" text="Import" textFill="#eeebeb" />
+   </children>
+</AnchorPane>

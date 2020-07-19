@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.DashboardController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="200.0">
+         <children>
+            <TreeView fx:id="treeview" layoutY="30.0" prefHeight="738.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="197.0" prefHeight="30.0" prefWidth="1166.0" style="-fx-background-color: #5d4eb5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblWelcome" layoutX="525.0" layoutY="6.0" prefHeight="20.0" prefWidth="200.0" text="Welcome User" textFill="#f8f5f5" AnchorPane.leftAnchor="520.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="1117.0" layoutY="2.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #5d4eb5;" text="Logout" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblAccess" layoutX="743.0" layoutY="95.0" text="Access Denied!" textFill="#f20606" visible="false" />
+      <Button fx:id="viewProduct" layoutX="200.0" layoutY="31.0" mnemonicParsing="false" onAction="#viewProduct" prefHeight="50.0" prefWidth="291.5" style="-fx-background-color: #4CAF50;" text="Product" textAlignment="JUSTIFY" textFill="#f8f1f1" />
+      <Button fx:id="viewOverview" layoutX="492.0" layoutY="31.0" mnemonicParsing="false" onAction="#viewOverview" prefHeight="50.0" prefWidth="291.5" style="-fx-background-color: #008CBA;" text="Overview" textAlignment="JUSTIFY" textFill="#f8f1f1" />
+      <Button fx:id="viewStock" layoutX="784.0" layoutY="31.0" mnemonicParsing="false" onAction="#viewStock" prefHeight="50.0" prefWidth="291.5" style="-fx-background-color: #f44336;" text="Stock" textAlignment="JUSTIFY" textFill="#f8f1f1" />
+      <Button layoutX="1076.0" layoutY="31.0" mnemonicParsing="false" onAction="#Traceability" prefHeight="50.0" prefWidth="291.5" style="-fx-background-color: #555555;" text="Traceability" textFill="WHITE" />
+      <AnchorPane layoutX="199.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1168.0">
+         <children>
+            <Button fx:id="btnAddUser" layoutX="1005.0" layoutY="21.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5d4eb5;" text="Add User" textFill="WHITE" visible="true" />
+            <Button fx:id="btnInsert" layoutX="1005.0" layoutY="54.0" mnemonicParsing="false" onAction="#insertUser" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5d4eb5;" text="Insert" textFill="WHITE" visible="false" />
+            <TextField fx:id="txtUsername" layoutX="1005.0" layoutY="104.0" promptText="Enter User Id" visible="false" />
+            <TextField fx:id="txtRole" layoutX="1005.0" layoutY="154.0" promptText="Enter Role" visible="false" />
+            <TextField fx:id="txtKey" layoutX="1005.0" layoutY="203.0" promptText="Enter Key" visible="false" AnchorPane.bottomAnchor="444.0" />
+            <Label fx:id="lblUserError" layoutX="1035.0" layoutY="129.0" text="Unable to insert!" textFill="#ff0101" visible="false" />
+            <TableView fx:id="prodNotif" layoutX="27.0" layoutY="129.0" prefHeight="200.0" prefWidth="378.0">
+              <columns>
+                <TableColumn fx:id="prodId" prefWidth="75.0" text="C1" />
+                <TableColumn fx:id="prodStatus" prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="prodAssignee" prefWidth="75.0" text="C3" />
+                  <TableColumn fx:id="prodAssignedTo" prefWidth="75.0" text="C4" />
+                  <TableColumn fx:id="prodDate" prefWidth="75.0" text="C5" />
+              </columns>
+            </TableView>
+            <TableView fx:id="overNotif" layoutX="435.0" layoutY="128.0" prefHeight="200.0" prefWidth="378.0">
+               <columns>
+                  <TableColumn fx:id="overId" prefWidth="75.0" text="C1" />
+                  <TableColumn fx:id="overStatus" prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="overAssignee" prefWidth="75.0" text="C3" />
+                  <TableColumn fx:id="overAssignedTo" prefWidth="75.0" text="C4" />
+                  <TableColumn fx:id="overDate" prefWidth="75.0" text="C5" />
+               </columns>
+            </TableView>
+            <TableView fx:id="stockNotif" layoutX="226.0" layoutY="355.0" prefHeight="200.0" prefWidth="378.0">
+               <columns>
+                  <TableColumn fx:id="stockId" prefWidth="75.0" text="C1" />
+                  <TableColumn fx:id="stockStatus" prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="stockAssignee" prefWidth="75.0" text="C3" />
+                  <TableColumn fx:id="stockAssignedTo" prefWidth="75.0" text="C4" />
+                  <TableColumn fx:id="stockDate" prefWidth="75.0" text="C5" />
+               </columns>
+            </TableView>
+            <Label layoutX="46.0" layoutY="58.0" text="Filter" />
+            <TextField fx:id="txtUpdDate" layoutX="266.0" layoutY="54.0" promptText="Date" />
+            <ComboBox fx:id="cmboStatus" layoutX="95.0" layoutY="54.0" prefWidth="150.0" promptText="Status" />
+            <Button layoutX="435.0" layoutY="54.0" mnemonicParsing="false" onAction="#Filter" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5d4eb5;" text="Filter" textFill="#fffefe" />
+            <ComboBox fx:id="comboUser" layoutX="993.0" layoutY="286.0" prefWidth="150.0" promptText="Users" />
+            <Button fx:id="delUser" layoutX="1018.0" layoutY="343.0" mnemonicParsing="false" onAction="#RemoveUser" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #e45151;" text="Delete User" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
