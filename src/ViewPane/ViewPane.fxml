@@ -52,7 +52,6 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnDashboard" layoutY="2.0" mnemonicParsing="false" onAction="#goToDashboard" style="-fx-background-color: #328708;" text="Dashboard" textFill="#f5f5f5" />
          </children>
       </AnchorPane>
       <Label fx:id="lblFilter" layoutX="217.0" layoutY="41.0" text="Filter" />
@@ -61,5 +60,6 @@
       <Button fx:id="btnEntryDel" layoutX="1243.0" layoutY="37.0" mnemonicParsing="false" onAction="#Delete" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #eb0527;" text="Delete Entry" textFill="#eeebeb" />
       <Button fx:id="btnEntryAdd" layoutX="1119.0" layoutY="37.0" mnemonicParsing="false" onAction="#ShowForm" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #13a19c;" text="Add Entry" textFill="#eeebeb" />
       <Button fx:id="btnImport" layoutX="992.0" layoutY="37.0" mnemonicParsing="false" onAction="#Import" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #db8848;" text="Import" textFill="#eeebeb" />
+      <Button fx:id="btnDashboard" layoutX="63.0" layoutY="558.0" mnemonicParsing="false" onAction="#goToDashboard" style="-fx-background-color: #328708;" text="Dashboard" textFill="#f5f5f5" />
    </children>
 </AnchorPane>

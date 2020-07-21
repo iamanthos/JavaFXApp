@@ -772,27 +772,46 @@ public void UpdateProduct(Product prod)
             if(role.equals("Admin"))
             {
                 sqlQuery = "SELECT [ProductId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Product]";
-            }
-            else
-            {
-                sqlQuery = "SELECT [ProductId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Product]";
+                
                 if(!"".equals(status) && status != null && "".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND [Assigned_To] = '%s'", status, currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s'", status);
                 }
                 if("".equals(status) && status != null && !"".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Date_Updated like '%s'  AND [Assigned_To] = '%s'", updatedDate+'%', currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Date_Updated like '%s' = '%s'", updatedDate+'%');
                 }
                 if(!"".equals(status) && status != null && !"".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND Date_Updated like '%s' AND [Assigned_To] = '%s'", status, updatedDate+'%', currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND Date_Updated like '%s'", status, updatedDate+'%');
+                }
+//                else
+//                {
+//                    sqlQuery = String.format(sqlQuery + " WHERE [Assigned_To] = '%s'", currentUser);
+//                }
+            }
+            else
+            {
+                sqlQuery = "SELECT [ProductId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Product]  WHERE [Created_User] = '" + currentUser + "'";
+            
+                if(!"".equals(status) && status != null && "".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Status = '%s' AND [Assigned_To] = '%s'", status, currentUser);
+                }
+                if("".equals(status) && status != null && !"".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Date_Updated like '%s'  AND [Assigned_To] = '%s'", updatedDate+'%', currentUser);
+                }
+                if(!"".equals(status) && status != null && !"".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Status = '%s' AND Date_Updated like '%s' AND [Assigned_To] = '%s'", status, updatedDate+'%', currentUser);
                 }
                 else
                 {
-                    sqlQuery = String.format(sqlQuery + " WHERE [Assigned_To] = '%s'", currentUser);
+                    sqlQuery = String.format(sqlQuery + " AND [Assigned_To] = '%s'", currentUser);
                 }
             }
+            
             Connection con = Connect();
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sqlQuery);
@@ -828,24 +847,42 @@ public void UpdateProduct(Product prod)
             if(role.equals("Admin"))
             {
                 sqlQuery = "SELECT [OverviewId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Overview]";
-            }
-            else
-            {
+                
                 if(!"".equals(status) && status != null && "".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND [Assigned_To] = '%s'", status, currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s'", status);
                 }
                 if("".equals(status) && status != null && !"".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Date_Updated like '%s'  AND [Assigned_To] = '%s'", updatedDate+'%', currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Date_Updated like '%s' = '%s'", updatedDate+'%');
                 }
                 if(!"".equals(status) && status != null && !"".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND Date_Updated like '%s' AND [Assigned_To] = '%s'", status, updatedDate+'%', currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND Date_Updated like '%s'", status, updatedDate+'%');
+                }
+//                else
+//                {
+//                    sqlQuery = String.format(sqlQuery + " WHERE [Assigned_To] = '%s'", currentUser);
+//                }
+            }
+            else
+            {
+                sqlQuery = "SELECT [OverviewId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Overview] WHERE [Created_User] = '" + currentUser + "'";
+                if(!"".equals(status) && status != null && "".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Status = '%s' AND [Assigned_To] = '%s'", status, currentUser);
+                }
+                if("".equals(status) && status != null && !"".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Date_Updated like '%s'  AND [Assigned_To] = '%s'", updatedDate+'%', currentUser);
+                }
+                if(!"".equals(status) && status != null && !"".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Status = '%s' AND Date_Updated like '%s' AND [Assigned_To] = '%s'", status, updatedDate+'%', currentUser);
                 }
                 else
                 {
-                    sqlQuery = String.format(sqlQuery + " WHERE [Assigned_To] = '%s'", currentUser);
+                    sqlQuery = String.format(sqlQuery + " AND [Assigned_To] = '%s'", currentUser);
                 }
             }
             
@@ -885,24 +922,42 @@ public void UpdateProduct(Product prod)
             if(role.equals("Admin"))
             {
                 sqlQuery = "SELECT  [StockId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Stock]";
-            }
-            else
-            {
+                
                 if(!"".equals(status) && status != null && "".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND [Assigned_To] = '%s'", status, currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s'", status);
                 }
                 if("".equals(status) && status != null && !"".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Date_Updated like '%s'  AND [Assigned_To] = '%s'", updatedDate+'%', currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Date_Updated like '%s' = '%s'", updatedDate+'%');
                 }
                 if(!"".equals(status) && status != null && !"".equals(updatedDate))
                 {
-                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND Date_Updated like '%s' AND [Assigned_To] = '%s'", status, updatedDate+'%', currentUser);
+                   sqlQuery = String.format(sqlQuery + " WHERE Status = '%s' AND Date_Updated like '%s'", status, updatedDate+'%');
+                }
+//                else
+//                {
+//                    sqlQuery = String.format(sqlQuery + " WHERE [Assigned_To] = '%s'", currentUser);
+//                }
+            }
+            else
+            {
+                sqlQuery = "SELECT  [StockId], [Status], [Assigned_By], [Assigned_To], [Date_Updated] FROM [JavaDB].[dbo].[Stock] WHERE [Created_User] = '" + currentUser + "'";
+                if(!"".equals(status) && status != null && "".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Status = '%s' AND [Assigned_To] = '%s'", status, currentUser);
+                }
+                if("".equals(status) && status != null && !"".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Date_Updated like '%s'  AND [Assigned_To] = '%s'", updatedDate+'%', currentUser);
+                }
+                if(!"".equals(status) && status != null && !"".equals(updatedDate))
+                {
+                   sqlQuery = String.format(sqlQuery + " AND Status = '%s' AND Date_Updated like '%s' AND [Assigned_To] = '%s'", status, updatedDate+'%', currentUser);
                 }
                 else
                 {
-                    sqlQuery = String.format(sqlQuery + " WHERE [Assigned_To] = '%s'", currentUser);
+                    sqlQuery = String.format(sqlQuery + " AND [Assigned_To] = '%s'", currentUser);
                 }
             }
             Connection con = Connect();

@@ -23,7 +23,6 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnDashboard" layoutY="4.0" mnemonicParsing="false" onAction="#goToDashboard" style="-fx-background-color: #328708;" text="Dashboard" textFill="#f5f5f5" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="466.0" layoutY="192.0" prefHeight="400.0" prefWidth="600.0">
@@ -48,5 +47,6 @@
             <ComboBox fx:id="txtbox3" layoutX="262.0" layoutY="99.0" prefWidth="150.0" promptText="Select Status" />
          </children>
       </AnchorPane>
+      <Button fx:id="btnDashboard" layoutX="63.0" layoutY="648.0" mnemonicParsing="false" onAction="#goToDashboard" style="-fx-background-color: #328708;" text="Dashboard" textFill="#f5f5f5" />
    </children>
 </AnchorPane>

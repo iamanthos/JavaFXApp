@@ -1,8 +1,11 @@
 package ScreenManager;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollBar;
 import javafx.stage.Stage;
 
 public class ScreenNavigator extends Application {
@@ -25,11 +28,25 @@ public class ScreenNavigator extends Application {
         mainContainer.loadScreen(ScreenNavigator.loginScreenId, ScreenNavigator.loginScreenFile);
         mainContainer.setScreen(ScreenNavigator.loginScreenId);
         
+        //For scroll bar uncomment below
+//        ScrollBar s = new ScrollBar();
+//        s.setPrefWidth(1366);
+//        s.setTranslateY(700);
+//        s.valueProperty().addListener(new ChangeListener<Number>(){
+//            public void changed(ObservableValue<? extends Number> cv,
+//                    Number old_val, Number new_val){
+//                mainContainer.setLayoutX(-new_val.doubleValue());
+//            }
+//        });
+        
         Group root = new Group();
-        root.getChildren().addAll(mainContainer);
+        //For scroll bar comment below
+        root.getChildren().addAll(mainContainer);  
+        //For scroll bar uncomment below
+//        root.getChildren().addAll(mainContainer, s);
         Scene scene = new Scene(root, 1366, 768);
         
-//        primaryStage.setResizable(false);
+        
         primaryStage.setMaximized(true);
 
         primaryStage.setScene(scene);

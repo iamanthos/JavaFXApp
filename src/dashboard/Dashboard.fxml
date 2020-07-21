@@ -14,7 +14,16 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="200.0">
          <children>
-            <TreeView fx:id="treeview" layoutY="30.0" prefHeight="738.0" prefWidth="200.0" />
+            <TreeView fx:id="treeview" layoutY="30.0" prefHeight="290.0" prefWidth="200.0" />
+            <Button fx:id="btnAddUser" layoutX="25.0" layoutY="328.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5d4eb5;" text="Add User" textFill="WHITE" visible="true" />
+            <Button fx:id="btnInsert" layoutX="25.0" layoutY="359.0" mnemonicParsing="false" onAction="#insertUser" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5d4eb5;" text="Insert" textFill="WHITE" visible="false" />
+            <TextField fx:id="txtUsername" layoutX="26.0" layoutY="384.0" promptText="Enter User Id" visible="false" />
+            <TextField fx:id="txtRole" layoutX="26.0" layoutY="434.0" promptText="Enter Role" visible="false" />
+            <TextField fx:id="txtKey" layoutX="26.0" layoutY="482.0" promptText="Enter Key" visible="false" AnchorPane.bottomAnchor="261.0" />
+            <Label fx:id="lblUserError" layoutX="56.0" layoutY="409.0" text="Unable to insert!" textFill="#ff0101" visible="false" />
+            <ComboBox fx:id="comboUser" layoutX="26.0" layoutY="552.0" prefWidth="150.0" promptText="Users" />
+            <Button fx:id="delUser" layoutX="51.0" layoutY="609.0" mnemonicParsing="false" onAction="#RemoveUser" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #e45151;" text="Delete User" textFill="WHITE" />
+            <Button layoutX="73.0" layoutY="666.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #5d4eb5;" text="Logout" textFill="WHITE" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="197.0" prefHeight="30.0" prefWidth="1166.0" style="-fx-background-color: #5d4eb5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -24,7 +33,6 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="1117.0" layoutY="2.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #5d4eb5;" text="Logout" textFill="WHITE" />
          </children>
       </AnchorPane>
       <Label fx:id="lblAccess" layoutX="743.0" layoutY="95.0" text="Access Denied!" textFill="#f20606" visible="false" />
@@ -34,12 +42,6 @@
       <Button layoutX="1076.0" layoutY="31.0" mnemonicParsing="false" onAction="#Traceability" prefHeight="50.0" prefWidth="291.5" style="-fx-background-color: #555555;" text="Traceability" textFill="WHITE" />
       <AnchorPane layoutX="199.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1168.0">
          <children>
-            <Button fx:id="btnAddUser" layoutX="1005.0" layoutY="21.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5d4eb5;" text="Add User" textFill="WHITE" visible="true" />
-            <Button fx:id="btnInsert" layoutX="1005.0" layoutY="54.0" mnemonicParsing="false" onAction="#insertUser" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5d4eb5;" text="Insert" textFill="WHITE" visible="false" />
-            <TextField fx:id="txtUsername" layoutX="1005.0" layoutY="104.0" promptText="Enter User Id" visible="false" />
-            <TextField fx:id="txtRole" layoutX="1005.0" layoutY="154.0" promptText="Enter Role" visible="false" />
-            <TextField fx:id="txtKey" layoutX="1005.0" layoutY="203.0" promptText="Enter Key" visible="false" AnchorPane.bottomAnchor="444.0" />
-            <Label fx:id="lblUserError" layoutX="1035.0" layoutY="129.0" text="Unable to insert!" textFill="#ff0101" visible="false" />
             <TableView fx:id="prodNotif" layoutX="27.0" layoutY="129.0" prefHeight="200.0" prefWidth="378.0">
               <columns>
                 <TableColumn fx:id="prodId" prefWidth="75.0" text="C1" />
@@ -71,8 +73,6 @@
             <TextField fx:id="txtUpdDate" layoutX="266.0" layoutY="54.0" promptText="Date" />
             <ComboBox fx:id="cmboStatus" layoutX="95.0" layoutY="54.0" prefWidth="150.0" promptText="Status" />
             <Button layoutX="435.0" layoutY="54.0" mnemonicParsing="false" onAction="#Filter" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5d4eb5;" text="Filter" textFill="#fffefe" />
-            <ComboBox fx:id="comboUser" layoutX="993.0" layoutY="286.0" prefWidth="150.0" promptText="Users" />
-            <Button fx:id="delUser" layoutX="1018.0" layoutY="343.0" mnemonicParsing="false" onAction="#RemoveUser" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #e45151;" text="Delete User" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>
